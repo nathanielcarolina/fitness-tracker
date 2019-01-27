@@ -12,6 +12,15 @@
   <% end %>
 
   <div class="actions">
+    <%= form.label :name, 'Select activity done:' %>
+    <%= form.text_field :name %>
+
+    <%= form.label :date %>
+    <%= form.date_field :date %>
+
+    <%= form.label :duration %>
+    <%= form.text_field :duration %>
+
     <%= form.submit %>
   </div>
 <% end %>
