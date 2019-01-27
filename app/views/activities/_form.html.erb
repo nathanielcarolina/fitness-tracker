@@ -13,7 +13,24 @@
 
   <div class="actions">
     <%= form.label :name, 'Select activity done:' %>
-    <%= form.text_field :name %>
+    <%= form.select(:name,
+      options_for_select(
+        [
+          ['Battle Ropes', 'Battle Ropes'],
+          ['Cycling', 'Cycling'],
+          ['Elliptical', 'Elliptical'],
+          ['Rowing', 'Rowing'],
+          ['Running', 'Running'],
+          ['Swimming', 'Swimming'],
+          ['Tennis', 'Tennis'],
+          ['Walking', 'Walking'],
+          ['Weight-lifting', 'Weight-lifting'],
+          ['Yoga', 'Yoga'],
+          ['Other', 'Other']
+        ]
+      )) %>
+
+
 
     <%= form.label :date %>
     <%= form.date_field :date %>
