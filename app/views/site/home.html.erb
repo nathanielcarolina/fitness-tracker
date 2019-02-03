@@ -1,4 +1,11 @@
-<h1>Move and Groove</h1>
-<p>Fitness Tracker Site</p>
-
-<%= link_to 'See My Activities', activities_path %>
+<div class="jumbotron jumbotron-fluid site-hero">
+  <div class="container py-5">
+    <h1 class="display-3 font-weight-bold pb-4 text-white">Track your fitness habits</h1>
+    <% if user_signed_in? %>
+      <%= link_to 'My Activities', activities_path, :class => 'btn btn-info btn-lg' %>
+    <% else %>
+      <%= link_to "Sign Up", new_user_registration_path, :class => 'btn btn-info btn-lg' %> or
+      <%= link_to "Login", new_user_session_path, :class => 'btn btn-info btn-lg' %>
+    <% end %>
+  </div>
+</div>

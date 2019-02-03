@@ -14,7 +14,7 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-info">
       <%= link_to 'Move and Groove', '/', :class => 'navbar-brand' %>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -23,13 +23,13 @@
       <div class="collapse navbar-collapse" id="navbarContent">
         <ul class="navbar-nav ml-auto">
           <% if user_signed_in? %>
-            <li class="nav-item navbar-text">Logged in as <strong><%= current_user.email %></strong></li>
-            <li class="nav-item"><%= link_to 'My Activities', activities_path, :class => 'nav-link' %></li>
-            <li class="nav-item"><%= link_to 'Edit profile', edit_user_registration_path, :class => 'nav-link' %></li>
-            <li class="nav-item"><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'nav-item nav-link' %></li>
+            <li class="nav-item navbar-text text-white pr-3">Logged in as <strong><%= current_user.email %></strong></li>
+            <li class="nav-item pr-3"><%= link_to 'My Activities', activities_path, :class => 'nav-link text-white' %></li>
+            <li class="nav-item pr-3"><%= link_to 'Edit profile', edit_user_registration_path, :class => 'nav-link text-white' %></li>
+            <li class="nav-item"><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'nav-item nav-link text-white' %></li>
           <% else %>
-            <li class="nav-item"><%= link_to "Sign up", new_user_registration_path, :class => 'nav-item nav-link' %></li>
-            <li class="nav-item"><%= link_to "Login", new_user_session_path, :class => 'nav-item nav-link' %></li>
+            <li class="nav-item pr-3"><%= link_to "Sign up", new_user_registration_path, :class => 'nav-item nav-link text-white' %></li>
+            <li class="nav-item"><%= link_to "Login", new_user_session_path, :class => 'nav-item nav-link text-white' %></li>
           <% end %>
         </ul>
       </div>
