@@ -14,7 +14,8 @@ class ActivitiesController < ApplicationController
 
   # GET /activities/new
   def new
-    @activity = Activity.new
+#    @activity = Activity.new
+    @activity = current_user.activities.new
   end
 
   # GET /activities/1/edit
