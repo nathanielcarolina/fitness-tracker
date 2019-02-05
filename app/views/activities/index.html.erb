@@ -1,11 +1,7 @@
-<div class="jumbotron jumbotron-fluid site-hero">
-  <div class="container">
-    <h2 class="display-4 text-white">My Activities</h2>
-  </div>
-</div>
-
-<div class="container py-3">
-  <table class="table">
+<%= render 'jumbotron', title: "My Activities" %>
+<div class="container pb-5">
+  <%= link_to 'Add New Activity', new_activity_path, :class => 'btn btn-info btn-lg mb-5' %>
+  <table class="table table-striped">
     <thead>
       <tr>
         <th scope="col">Activity</th>
@@ -28,6 +24,5 @@
       <% end %>
     </tbody>
   </table>
-  <%= link_to 'Add New Activity', new_activity_path, :class => 'btn btn-info btn-lg' %>
 
 </div>
