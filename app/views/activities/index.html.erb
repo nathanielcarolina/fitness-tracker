@@ -1,28 +1,29 @@
 <%= render 'jumbotron', title: "My Activities" %>
 <div class="container pb-5">
   <%= link_to 'Add New Activity', new_activity_path, :class => 'btn btn-info btn-lg mb-5' %>
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th scope="col">Activity</th>
-        <th scope="col">Date</th>
-        <th scope="col">Duration (mins)</th>
-        <th scope="col"></th>
-        <th scope="col"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @activities.each do |activity| %>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
         <tr>
-          <td><%= link_to activity.name, activity %></td>
-          <td><%= activity.date %></td>
-          <td><%= activity.duration %></td>
-          <td><%= link_to 'Edit', edit_activity_path(activity) %></td>
-          <td><%= link_to 'Destroy', activity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <th scope="col">Activity</th>
+          <th scope="col">Date</th>
+          <th scope="col">Duration (mins)</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
 
+      <tbody>
+        <% @activities.each do |activity| %>
+          <tr>
+            <td><%= link_to activity.name, activity %></td>
+            <td><%= activity.date %></td>
+            <td><%= activity.duration %></td>
+            <td><%= link_to 'Edit', edit_activity_path(activity) %></td>
+            <td><%= link_to 'Delete', activity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>
